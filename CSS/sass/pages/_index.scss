@@ -1,0 +1,148 @@
+body {
+    font-family: roboto;
+}
+main {
+  background-color: $color_quaternary;
+    
+}
+form {
+    background-color: rgba(grey, .3);
+    text-align: center;
+    box-shadow: inset 0 15px 10px -15px grey;
+    padding: 20px;
+    
+}
+.book {
+    display: flex;
+    flex-direction: column;
+    background-color: $color_quaternary;
+    align-items: center;
+    padding: 30px;
+    gap: 10px;
+}
+.function {
+    padding: 20px;
+    background-color: white;
+}
+
+p {
+@include minMedium {
+   
+}
+@include minSmall {
+    
+}
+}
+main ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    counter-reset: my-sec-counter;
+        :nth-child(3) {
+        background-color: lighten($color-secondary, 35%);
+        i {
+            color: $color-secondary;
+        }
+    }
+}
+main li {
+    list-style-type: none;
+    padding: 30px 10px 30px 50px ;
+    background-color: $color_quaternary;
+    border-radius: 20px;
+    margin: 10px;
+    position: relative;
+    box-shadow: 0px 7px 36px -14px rgba(0,0,0,0.76);
+
+
+&::before {
+    counter-increment: my-sec-counter;
+    content: counter(my-sec-counter);
+            top: 20%;
+            background-color: $color-secondary;
+            color: white;
+            font-size: 1em;
+            padding: 10px 20px 10px 20px ;
+            position: absolute;
+            left: -3%;
+            border-radius: 50%;
+}
+}
+.restaurants {
+    display: flex;
+    flex-direction: column;
+    background-color: $color_quaternary;
+    padding: 20px 20px 100px;
+    gap: 20px;
+    :nth-child(3) figcaption::after {
+        -webkit-text-stroke: 0px;
+        -webkit-text-fill-color: $color-secondary;
+    }
+}
+figure {
+    
+    background-color: #ffffff;
+    width: 100%;
+    height: 50vw;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 15px;
+    position: relative;
+    &::before {
+        content: "Nouveau";
+        top: 10%;
+        background-color: $color_tertiary;
+        color: darken($color_tertiary, 40%);
+        font-weight: bold;
+        font-size: 18px;
+        padding: 10px 20px 10px 20px;
+        position: absolute;
+        right: 5%;
+        border-radius: 5%;
+        width: fit-content;
+    }
+    
+}
+img {
+    height: 80%;
+}
+
+figcaption {
+    
+    padding: 10px;
+    position: relative;
+    height: 20%;
+    overflow: hidden;
+    
+    &::after {
+        
+        font-family: 'FontAwesome';
+        content: "\f004";
+        font-style: normal;
+        bottom: 40%;
+        font-size: 20px;
+        position: absolute;
+        right: 10%;
+        -webkit-text-stroke: 1px black;
+        -webkit-text-fill-color: white;
+
+     }
+     &:hover::after {
+        -webkit-text-stroke: 0px;
+    -webkit-text-fill-color: $color-secondary;
+    cursor: pointer;
+     }
+     &:active:hover {
+        -webkit-text-fill-color: $color-secondary;
+     }
+     
+    }
+figcaption p {
+    text-align: start;
+}
+
+i {
+    width: 30px; 
+    
+}
