@@ -8,12 +8,3 @@
         @content;
     }   
 }
-
-@mixin overlay {
-background-color: red;
-}
-
-@mixin animation_check {
-    transform: rotate(0);
-    transition: all 0.5s ease-in;
-}

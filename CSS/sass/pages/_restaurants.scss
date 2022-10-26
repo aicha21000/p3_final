@@ -12,21 +12,22 @@ main {
     flex-direction: column;
 }
 
-header::before {
-    font-family: fontawesome;
-    content: "\f060";
+header i {
     color: black;
     padding: 10px;
     font-weight: bold;
     font-size: 18px;
     position: absolute;
     left: 5%;
+    top: 3%;
+    
 }
 main h1 {
     text-align: start;
     position: relative;
     padding: 1em 0;
     &::after {
+
         font-family: fontawesome;
         content: "\f004";
         -webkit-text-stroke: 1px black;
@@ -64,7 +65,6 @@ img {
     @include minMedium {
         flex-direction: row;
         justify-content: center;
-        align-items: center;
         flex-wrap: wrap;
         gap: 20px;
         h1 {
@@ -163,9 +163,10 @@ button {
     margin-bottom: 10vw;
 }
 
-@for $i from 1 through 12{
+@for $i from 1 through 13{
     .prog#{$i} {
         animation: posi ((0.3s+calc($i / 4)), progress (0.4s+calc($i / 4)));
+        -webkit-animation: posi ((0.3s+calc($i / 4)), progress (0.4s+calc($i / 4)));
     }
 }
 

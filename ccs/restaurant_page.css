@@ -1,57 +1,3 @@
-@-webkit-keyframes posi {
-  from {
-    transform: translateY(50px);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-@keyframes posi {
-  from {
-    transform: translateY(50px);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-@-webkit-keyframes change-color {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-@keyframes change-color {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-@-webkit-keyframes progress {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes progress {
-  0% {
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 h1 {
   font-family: Shrikhand;
   font-size: 2.5em;
@@ -62,14 +8,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
 }
 @media (min-width: 768px) {
   header {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
     height: fit-content;
   }
 }
@@ -81,8 +23,6 @@ button {
   padding: 3vw 4vw;
   color: white;
   font-size: 2.5vw;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -110,6 +50,9 @@ header::before {
   font-size: 18px;
   position: absolute;
   left: 5%;
+}
+header::before:link {
+  content: "www.google.com";
 }
 
 main h1 {
@@ -140,8 +83,7 @@ h3 {
 }
 
 img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 @media (min-width: 992px) {
   img {
@@ -226,8 +168,6 @@ main li:hover .over::after {
   transition: all 0.6s ease-in;
   flex: 0;
   position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .over::after {
@@ -265,63 +205,51 @@ button {
 }
 
 .prog1 {
-  -webkit-animation: posi 0.55s, progress 0.65s;
-          animation: posi 0.55s, progress 0.65s;
+  animation: posi 0.55s, progress 0.65s;
 }
 
 .prog2 {
-  -webkit-animation: posi 0.8s, progress 0.9s;
-          animation: posi 0.8s, progress 0.9s;
+  animation: posi 0.8s, progress 0.9s;
 }
 
 .prog3 {
-  -webkit-animation: posi 1.05s, progress 1.15s;
-          animation: posi 1.05s, progress 1.15s;
+  animation: posi 1.05s, progress 1.15s;
 }
 
 .prog4 {
-  -webkit-animation: posi 1.3s, progress 1.4s;
-          animation: posi 1.3s, progress 1.4s;
+  animation: posi 1.3s, progress 1.4s;
 }
 
 .prog5 {
-  -webkit-animation: posi 1.55s, progress 1.65s;
-          animation: posi 1.55s, progress 1.65s;
+  animation: posi 1.55s, progress 1.65s;
 }
 
 .prog6 {
-  -webkit-animation: posi 1.8s, progress 1.9s;
-          animation: posi 1.8s, progress 1.9s;
+  animation: posi 1.8s, progress 1.9s;
 }
 
 .prog7 {
-  -webkit-animation: posi 2.05s, progress 2.15s;
-          animation: posi 2.05s, progress 2.15s;
+  animation: posi 2.05s, progress 2.15s;
 }
 
 .prog8 {
-  -webkit-animation: posi 2.3s, progress 2.4s;
-          animation: posi 2.3s, progress 2.4s;
+  animation: posi 2.3s, progress 2.4s;
 }
 
 .prog9 {
-  -webkit-animation: posi 2.55s, progress 2.65s;
-          animation: posi 2.55s, progress 2.65s;
+  animation: posi 2.55s, progress 2.65s;
 }
 
 .prog10 {
-  -webkit-animation: posi 2.8s, progress 2.9s;
-          animation: posi 2.8s, progress 2.9s;
+  animation: posi 2.8s, progress 2.9s;
 }
 
 .prog11 {
-  -webkit-animation: posi 3.05s, progress 3.15s;
-          animation: posi 3.05s, progress 3.15s;
+  animation: posi 3.05s, progress 3.15s;
 }
 
 .prog12 {
-  -webkit-animation: posi 3.3s, progress 3.4s;
-          animation: posi 3.3s, progress 3.4s;
+  animation: posi 3.3s, progress 3.4s;
 }
 
 footer h1 {
@@ -339,4 +267,6 @@ footer {
 
 footer i {
   width: 25px;
-}/*# sourceMappingURL=main_restaurants.css.map */
+}
+
+/*# sourceMappingURL=restaurant_page.css.map */
