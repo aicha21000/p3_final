@@ -77,16 +77,27 @@
 h1 {
   font-family: Shrikhand;
   font-size: 4vw;
-  text-align: center;
 }
 
+header {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vw;
+}
+@media (min-width: 768px) {
+  header {
+    height: 5em;
+  }
+}
 button {
   background: linear-gradient(#ff79da, #9356dc);
   border: none;
-  border-radius: 30px;
-  padding: 15px 40px;
+  border-radius: 50px;
+  padding: 3vw 4vw;
   color: white;
-  font-size: 1em;
+  font-size: 2.5vw;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -97,7 +108,19 @@ body {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
   background-color: #f6f6f6;
+}
+@media (min-width: 768px) {
+  main {
+    background-color: red;
+  }
+}
+@media (min-width: 992px) {
+  main {
+    background-color: rgb(60, 0, 128);
+  }
 }
 
 form {
@@ -105,6 +128,34 @@ form {
   text-align: center;
   box-shadow: inset 0 15px 10px -15px grey;
   padding: 20px;
+}
+@media (min-width: 768px) {
+  form {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 30px;
+    align-self: flex-end;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+}
+@media (min-width: 992px) {
+  form {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border-radius: 30px;
+    align-self: flex-end;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+}
+
+h3 {
+  font-size: 1.2em;
 }
 
 .book {
@@ -114,6 +165,22 @@ form {
   align-items: center;
   padding: 30px;
   gap: 10px;
+}
+@media (min-width: 768px) {
+  .book {
+    background-color: white;
+  }
+}
+@media (min-width: 992px) {
+  .book {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+  }
+  .book h2 {
+    width: 60%;
+    order: 2;
+  }
 }
 
 .function {
@@ -133,8 +200,15 @@ main ul :nth-child(3) {
 main ul :nth-child(3) i {
   color: #9356dc;
 }
+@media (min-width: 768px) {
+  main ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
 
 main li {
+  font-size: 1em;
   list-style-type: none;
   padding: 30px 10px 30px 50px;
   background-color: #f6f6f6;
@@ -155,6 +229,13 @@ main li::before {
   left: -3%;
   border-radius: 50%;
 }
+@media (min-width: 768px) {
+  main li::before {
+    padding: 5px 12px 5px 12px;
+    left: 3%;
+    top: 25%;
+  }
+}
 
 .restaurants {
   display: flex;
@@ -166,6 +247,26 @@ main li::before {
 .restaurants :nth-child(3) figcaption::after {
   -webkit-text-stroke: 0px;
   -webkit-text-fill-color: #9356dc;
+}
+@media (min-width: 768px) {
+  .restaurants {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .restaurants h3 {
+    width: 100%;
+  }
+  .restaurants figure {
+    width: 48%;
+    height: 25vw;
+  }
+}
+@media (min-width: 992px) {
+  .restaurants figure {
+    width: 23%;
+    height: 25vw;
+  }
 }
 
 figure {
@@ -193,15 +294,14 @@ figure::before {
   width: -moz-fit-content;
   width: fit-content;
 }
-
-img {
-  height: 80%;
+figure img {
+  height: 75%;
 }
 
 figcaption {
-  padding: 10px;
+  padding: 5px;
   position: relative;
-  height: 20%;
+  height: 25%;
   overflow: hidden;
 }
 figcaption::after {
@@ -223,7 +323,9 @@ figcaption:hover::after {
 figcaption:active:hover {
   -webkit-text-fill-color: #9356dc;
 }
-
+figcaption h3 {
+  font-size: 1em;
+}
 figcaption p {
   text-align: start;
 }

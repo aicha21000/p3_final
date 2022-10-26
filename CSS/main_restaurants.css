@@ -77,16 +77,27 @@
 h1 {
   font-family: Shrikhand;
   font-size: 4vw;
-  text-align: center;
 }
 
+header {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vw;
+}
+@media (min-width: 768px) {
+  header {
+    height: 5em;
+  }
+}
 button {
   background: linear-gradient(#ff79da, #9356dc);
   border: none;
-  border-radius: 30px;
-  padding: 15px 40px;
+  border-radius: 50px;
+  padding: 3vw 4vw;
   color: white;
-  font-size: 1em;
+  font-size: 2.5vw;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -100,21 +111,11 @@ body {
   font-family: roboto;
   min-height: 100%;
   background-color: #f6f6f6;
-  height: 100%;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  height: 70%;
-}
-
-header {
-  height: 10vw;
-  padding: 10px;
-}
-header h1 {
-  text-align: center;
 }
 
 header::before {
@@ -155,15 +156,50 @@ h3 {
   white-space: nowrap;
 }
 
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (min-width: 992px) {
+  img {
+    height: 20em;
+  }
+}
+
 .main_content {
   display: flex;
   flex-direction: column;
-  padding: 10px;
   background-color: #f6f6f6;
   padding: 20px;
   border-radius: 40px 40px 0 0;
-  top: 40%;
   width: 100%;
+  transform: translateY(-50px);
+}
+@media (min-width: 768px) {
+  .main_content {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .main_content h1 {
+    width: 100%;
+  }
+  .main_content .type_menu {
+    width: calc(50% - 20px);
+  }
+  .main_content :nth-child(4) {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .main_content {
+    transform: none;
+  }
+  .main_content .type_menu {
+    width: calc(33.3333333333% - 20px);
+  }
 }
 
 main ul {
@@ -195,6 +231,7 @@ main li:hover .over {
 main li:hover .over::after {
   transform: rotate(360deg);
 }
+
 .over {
   content: "";
   display: flex;
@@ -235,13 +272,13 @@ main li:hover .over::after {
 }
 
 span {
-  padding: 2.5em 1em;
+  font-size: 1.5em;
+  padding: 1.25em 1em;
 }
 
 button {
   align-self: center;
-  margin: 10%;
-  bottom: -10%;
+  margin-bottom: 10vw;
 }
 
 .prog1 {

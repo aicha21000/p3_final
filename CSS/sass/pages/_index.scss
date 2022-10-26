@@ -1,16 +1,45 @@
 body {
     font-family: roboto;
 }
+
 main {
+    display: flex;
+    flex-direction: column;
   background-color: $color_quaternary;
-    
+ 
+ @include minMedium {
+    background-color: red;
+
+}
+@include minLarge {
+    background-color: rgb(60, 0, 128);
+}
 }
 form {
     background-color: rgba(grey, .3);
     text-align: center;
     box-shadow: inset 0 15px 10px -15px grey;
     padding: 20px;
-    
+    @include minMedium {
+        width: fit-content;
+        border-radius: 30px;
+        align-self: flex-end;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+
+    }
+    @include minLarge {
+        width: fit-content;
+        border-radius: 30px;
+        align-self: flex-end;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+}
+h3 {
+    font-size: 1.2em;
 }
 .book {
     display: flex;
@@ -19,20 +48,26 @@ form {
     align-items: center;
     padding: 30px;
     gap: 10px;
+    @include minMedium {
+        background-color: white;
+    }
+    @include minLarge{
+        
+        flex-direction: row;
+                justify-content: space-between;
+        flex-wrap: wrap-reverse;
+        h2 {
+            width: 60%;
+            order: 2;
+        }
+    }
 }
 .function {
     padding: 20px;
     background-color: white;
 }
 
-p {
-@include minMedium {
-   
-}
-@include minSmall {
-    
-}
-}
+
 main ul {
     display: flex;
     flex-direction: column;
@@ -40,12 +75,18 @@ main ul {
     counter-reset: my-sec-counter;
         :nth-child(3) {
         background-color: lighten($color-secondary, 35%);
+        
         i {
-            color: $color-secondary;
+            color: $color-secondary;           
         }
+    }
+    @include minMedium {
+        flex-direction: row;
+        justify-content: center;
     }
 }
 main li {
+    font-size: 1em;
     list-style-type: none;
     padding: 30px 10px 30px 50px ;
     background-color: $color_quaternary;
@@ -53,8 +94,6 @@ main li {
     margin: 10px;
     position: relative;
     box-shadow: 0px 7px 36px -14px rgba(0,0,0,0.76);
-
-
 &::before {
     counter-increment: my-sec-counter;
     content: counter(my-sec-counter);
@@ -66,6 +105,11 @@ main li {
             position: absolute;
             left: -3%;
             border-radius: 50%;
+            @include minMedium {
+                padding: 5px 12px 5px 12px ;
+                left: 3%;
+                top: 25%;
+            }
 }
 }
 .restaurants {
@@ -77,6 +121,25 @@ main li {
     :nth-child(3) figcaption::after {
         -webkit-text-stroke: 0px;
         -webkit-text-fill-color: $color-secondary;
+    }
+    @include minMedium {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        h3 {
+            width: 100%;
+        } 
+        figure {
+            width: 48%;
+            height: 25vw;
+        }
+    }
+    @include minLarge {
+           
+        figure {
+            width: 23%;
+            height: 25vw;
+        }
     }
 }
 figure {
@@ -102,21 +165,16 @@ figure {
         border-radius: 5%;
         width: fit-content;
     }
-    
+    img {
+    height: 75%;
+    }
 }
-img {
-    height: 80%;
-}
-
 figcaption {
-    
-    padding: 10px;
+    padding: 5px;
     position: relative;
-    height: 20%;
+    height: 25%;
     overflow: hidden;
-    
     &::after {
-        
         font-family: 'FontAwesome';
         content: "\f004";
         font-style: normal;
@@ -126,7 +184,6 @@ figcaption {
         right: 10%;
         -webkit-text-stroke: 1px black;
         -webkit-text-fill-color: white;
-
      }
      &:hover::after {
         -webkit-text-stroke: 0px;
@@ -136,11 +193,15 @@ figcaption {
      &:active:hover {
         -webkit-text-fill-color: $color-secondary;
      }
-     
-    }
-figcaption p {
+     h3 {
+        font-size: 1em;
+        
+     }
+     p {
     text-align: start;
 }
+    }
+
 
 i {
     width: 30px; 

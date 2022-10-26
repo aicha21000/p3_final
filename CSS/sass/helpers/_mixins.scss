@@ -3,7 +3,7 @@
         @content;
     }   
 }
-@mixin minSmall {
+@mixin minLarge {
     @media (min-width: 992px) {
         @content;
     }   
