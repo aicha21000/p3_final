@@ -1,3 +1,79 @@
+@-webkit-keyframes posi {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes posi {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes change-color {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes change-color {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+@-webkit-keyframes progress {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes progress {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes ding {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: blue;
+  }
+  100% {
+    background-color: green;
+  }
+}
+@keyframes ding {
+  0% {
+    background-color: red;
+  }
+  50% {
+    background-color: blue;
+  }
+  100% {
+    background-color: green;
+  }
+}
 h1 {
   font-family: Shrikhand;
   font-size: 4vw;
@@ -22,14 +98,15 @@ html {
 
 body {
   font-family: roboto;
-  position: relative;
   min-height: 100%;
   background-color: #f6f6f6;
+  height: 100%;
 }
 
 main {
   display: flex;
   flex-direction: column;
+  height: 70%;
 }
 
 header {
@@ -54,29 +131,28 @@ header::before {
 main h1 {
   text-align: start;
   position: relative;
+  padding: 1em 0;
 }
 main h1::after {
   font-family: fontawesome;
   content: "\f004";
   -webkit-text-stroke: 1px black;
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: #f6f6f6;
   right: 5%;
   position: absolute;
 }
 
 h2 {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 1.8em;
   box-shadow: 0px 3px 0px 0px #99e2d0;
   width: 40px;
 }
 
 h3 {
-  font-size: 2vw;
-}
-
-img {
-  position: relative;
+  font-size: 1.5em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .main_content {
@@ -88,7 +164,6 @@ img {
   border-radius: 40px 40px 0 0;
   top: 40%;
   width: 100%;
-  position: absolute;
 }
 
 main ul {
@@ -97,27 +172,136 @@ main ul {
   gap: 10px;
 }
 
+li p {
+  font-size: 1.2em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 main li {
   display: flex;
   flex-direction: row;
-  background-color: #ffffff;
+  justify-content: space-between;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   border-radius: 15px;
-  height: 60px;
-  padding-left: 10px;
+  height: 6em;
+  overflow: hidden;
 }
-main li:hover .check {
-  transform: translateX(-50%);
+main li:hover .over {
+  transform: translateX(0%);
+  flex: 25%;
+}
+main li:hover .over::after {
+  transform: rotate(360deg);
+}
+.over {
+  content: "";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #99e2d0;
+  height: 6em;
+  transform: translateX(20px);
+  transition: all 0.6s ease-in;
+  flex: 0;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.over::after {
+  font-family: fontawesome;
+  content: "\f00c";
+  color: #99e2d0;
+  font-size: 22px;
+  font-weight: bold;
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  padding: 3px 7px;
+  transform: rotate(0);
+  transition: all 0.5s ease-in;
 }
 
 .description_menu {
   display: flex;
   flex-direction: column;
+  padding: 15px;
+  flex: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+span {
+  padding: 2.5em 1em;
 }
 
 button {
   align-self: center;
   margin: 10%;
+  bottom: -10%;
+}
+
+.prog1 {
+  -webkit-animation: posi 0.55s, progress 0.65s;
+          animation: posi 0.55s, progress 0.65s;
+}
+
+.prog2 {
+  -webkit-animation: posi 0.8s, progress 0.9s;
+          animation: posi 0.8s, progress 0.9s;
+}
+
+.prog3 {
+  -webkit-animation: posi 1.05s, progress 1.15s;
+          animation: posi 1.05s, progress 1.15s;
+}
+
+.prog4 {
+  -webkit-animation: posi 1.3s, progress 1.4s;
+          animation: posi 1.3s, progress 1.4s;
+}
+
+.prog5 {
+  -webkit-animation: posi 1.55s, progress 1.65s;
+          animation: posi 1.55s, progress 1.65s;
+}
+
+.prog6 {
+  -webkit-animation: posi 1.8s, progress 1.9s;
+          animation: posi 1.8s, progress 1.9s;
+}
+
+.prog7 {
+  -webkit-animation: posi 2.05s, progress 2.15s;
+          animation: posi 2.05s, progress 2.15s;
+}
+
+.prog8 {
+  -webkit-animation: posi 2.3s, progress 2.4s;
+          animation: posi 2.3s, progress 2.4s;
+}
+
+.prog9 {
+  -webkit-animation: posi 2.55s, progress 2.65s;
+          animation: posi 2.55s, progress 2.65s;
+}
+
+.prog10 {
+  -webkit-animation: posi 2.8s, progress 2.9s;
+          animation: posi 2.8s, progress 2.9s;
+}
+
+.prog11 {
+  -webkit-animation: posi 3.05s, progress 3.15s;
+          animation: posi 3.05s, progress 3.15s;
+}
+
+.prog12 {
+  -webkit-animation: posi 3.3s, progress 3.4s;
+          animation: posi 3.3s, progress 3.4s;
 }
 
 footer h1 {
@@ -131,8 +315,6 @@ footer {
   color: #ffffff;
   padding: 20px;
   width: 100%;
-  bottom: -90%;
-  position: absolute;
 }
 
 footer i {

@@ -3,14 +3,15 @@ html {
 }
 body {
     font-family: roboto;
-    position: relative;
+   
     min-height: 100%;
     background-color: $color_quaternary;
+    height: 100%;
 }
 main {
-display: flex;
-flex-direction: column;
-
+    display: flex;
+    flex-direction: column;
+    height: 70%;
 }
 header {
     height: 10vw;
@@ -32,26 +33,29 @@ header::before {
 main h1 {
     text-align: start;
     position: relative;
+    padding: 1em 0;
     &::after {
         font-family: fontawesome;
         content: "\f004";
         -webkit-text-stroke: 1px black;
-        -webkit-text-fill-color: white;
+        -webkit-text-fill-color: $color-quaternary;
         right: 5%;
         position: absolute;
     }
 }
 h2 {
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 1.8em;
     box-shadow: 0px 3px 0px 0px $color_tertiary;
     width: 40px;
 }
 h3 {
-    font-size: 2vw;
+    font-size: 1.5em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 img {
-position: relative;
+    
 }
 .main_content {
     display: flex;
@@ -62,61 +66,92 @@ position: relative;
     border-radius: 40px 40px 0 0;
     top: 40%;
     width: 100%;
-    position: absolute;
+    
+    
 }
 main ul {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-// .check {
-//     background-color: $color_tertiary;
-//     border-radius: 0 15px 15px 0;
-//     transform: translateX(0%);
-//     transform-origin: left;
-//     transition: all 0.6s ease-in;
-//     position: relative;
-//     margin-left: 10px;
-//     left: 50%;
-//     overflow: hidden;
-// }
+li p {
+    font-size: 1.2em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 main li {
     display: flex;
     flex-direction: row;
-    background-color: #ffffff;
+    justify-content: space-between;
+    // background-color: #ffffff;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     border-radius: 15px;
-    height: 60px;
-    padding-left: 10px;
-    
-    &:hover .check {
-        transform: translateX(-50%);
+    height: 6em;
+
+    overflow: hidden;
+
+    &:hover .over {
+        transform: translateX(0%);
+        flex: 25%;
     }
-    
+
+    &:hover .over::after {
+        // transform: translateX(-100%) ;
+        transform: rotate(360deg);
+    }
+    &:hover span {
+        // right: 7em;
+    }
+}
+.over {
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color_tertiary;
+    height: 6em;
+    transform: translateX(20px);
+    transition: all 0.6s ease-in;
+    flex: 0;
+    position: relative;
+    width: fit-content;
+    &::after {
+        font-family: fontawesome;
+        content: "\f00c";
+        color: $color_tertiary;
+        font-size: 22px;
+        font-weight: bold;
+        position: absolute;
+        border-radius: 50%;
+        background-color: white;
+        padding: 3px 7px;
+        transform: rotate(0);
+        transition: all 0.5s ease-in;
+    }
 }
 .description_menu {
     display: flex;
     flex-direction: column;
-    
+    padding: 15px;
+    flex: 100%; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;   
 }
 span {
-   
-    
-
-    // &::after {
-    //     content: "\f00c";
-    //     font-family: fontawesome;
-    //     font-size: 10px;
-    //     border-radius: 50%;
-    //     background-color: red;
-    //     padding: 5px;
-    //     color: $color_tertiary;
-    //     transform: rotate(0deg);
-    //     transition: all 0.5s ease;
-    // }
-    
+    padding: 2.5em 1em;
 }
 button {
-align-self: center;
-margin: 10%;
+    align-self: center;
+    margin: 10%;
+    bottom: -10%;
 }
+
+@for $i from 1 through 12{
+    .prog#{$i} {
+        animation: posi ((0.3s+($i/4)), progress (0.4s+($i/4)));
+    }
+}
+
