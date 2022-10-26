@@ -165,7 +165,7 @@ button {
 
 @for $i from 1 through 12{
     .prog#{$i} {
-        animation: posi ((0.3s+($i/4)), progress (0.4s+($i/4)));
+        animation: posi ((0.3s+calc($i / 4)), progress (0.4s+calc($i / 4)));
     }
 }
 
