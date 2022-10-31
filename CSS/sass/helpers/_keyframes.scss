@@ -61,3 +61,22 @@
         opacity: 0;
     }
 }
+
+@keyframes colored {
+    0% {
+        fill: transparent;
+    }
+    100% {
+        fill: $color_secondary;
+        stroke-width: 5px;
+    }
+}
+@keyframes scale {
+    0% {
+        transform: scale(0);
+    }
+  
+    100% {
+        transform: scale(1);
+    }
+}
