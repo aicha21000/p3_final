@@ -1,0 +1,197 @@
+html {
+    height: 100%;
+}
+body {
+    font-family: roboto;
+    min-height: 100%;
+    background-color: $color_quaternary;
+}
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+header i {
+    color: black;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    left: 5%;
+    top: 3%;
+}
+
+h1 {
+    font-size: clamp(28px, 4vw, 32px);
+    width: 80%;
+}
+h2 {
+    font-size: 20px;
+    &::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 5px;
+        background-color: $color_tertiary;
+    }
+}
+h3 {
+    font-size: 14px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+img {
+    object-fit: cover;
+    @include minLarge {
+        height: 20em;
+    }
+}
+.type_menu {
+    width: 100%;
+}
+
+.main_content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: $color_quaternary;
+    padding: 20px;
+    border-radius: 40px 40px 0 0;
+    width: 100%;
+    transform: translateY(-50px);
+    @include minMedium {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .type_menu {
+            width: calc(100% / 2 - 20px);
+        }
+        :nth-child(5) {
+            width: 100%;
+        }
+    }
+    @include minLarge {
+        transform: none;
+        .type_menu {
+            width: calc(100% / 3 - 20px);
+        }
+    }
+}
+
+main ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+li p {
+    font-size: 14px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+main li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    height: 70px;
+    overflow: hidden;
+    &:hover .over {
+        transform: translateX(0%);
+        
+        flex: 70px;
+    }
+    &:hover .over::after {
+        transform: rotate(360deg);
+    }
+}
+.over {
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color_tertiary;
+    height: 70px;
+    transform: translateX(20px);
+    transition: all 0.6s ease-in;
+    flex: 0;
+    position: relative;
+    width: 70px;
+    &::after {
+        font-family: fontawesome;
+        content: "\f00c";
+        color: $color_tertiary;
+        font-size: 18px;
+        font-weight: bold;
+        position: absolute;
+        border-radius: 50%;
+        background-color: white;
+        padding-left: 3px;
+        height: 25px;
+        width: 25px;
+        transform: rotate(0);
+        transition: all 0.5s ease-in;
+    }
+}
+.description_menu {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    flex: calc(100% - 100px);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+span {
+    font-size: 18px;
+    padding: 30px 10px;
+}
+button {
+    align-self: center;
+    margin-bottom: 10vw;
+}
+
+@for $i from 1 through 13 {
+    .prog#{$i} {
+        animation: posi ((0.3s + calc($i / 4)), progress (0.4s + calc($i / 4)));
+        -webkit-animation: posi
+            ((0.3s + calc($i / 4)), progress (0.4s + calc($i / 4)));
+    }
+}
+
+
+.heart {
+    font-style: normal;
+    // top: -70%;
+    // left: 90%;
+    top: 10%;
+    right: 5%;
+    position: relative;
+    width: fit-content;
+    cursor: pointer;
+}
+i {
+    font-size: 30px;
+    position: absolute;
+    }
+.on {
+    z-index: 2;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: transparent;
+}
+.off {
+    background: linear-gradient(-180deg, $color-secondary 0%, $color_primary 60%,  rgba($color_primary, 0.7) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 1;
+    transform: scale(0);
+}
+.heart:hover .off {
+    animation: scale 0.5s forwards, colored 0.5s linear;
+}
+
