@@ -167,11 +167,10 @@ button {
 
 .heart {
     font-style: normal;
-    // top: -70%;
-    // left: 90%;
-    top: 10%;
-    right: 5%;
-    position: relative;
+    right: 60px;
+    position: absolute;
+
+   
     width: fit-content;
     cursor: pointer;
 }
@@ -194,4 +193,6 @@ i {
 .heart:hover .off {
     animation: scale 0.5s forwards, colored 0.5s linear;
 }
+.heart:hover .on {
+    animation: coloredStroke 1s forwards;}
 

@@ -2,7 +2,7 @@ body {
     font-family: roboto;
 }
 header {
-    animation: opacity 1 ease-in-out 1s;
+    animation: opacity 1 ease-in-out 1.5s;
 }
 .loader {
     border: 14px solid #f3f3f3;
@@ -11,13 +11,15 @@ header {
     width: 160px;
     height: 160px;
     opacity: 0;
-    position: absolute;
+    position: fixed;
     top: 50%;
-    right: 50%;
-    animation: spin 1s linear infinite, opacity2 1s ease-in-out;
+    left: 40%;
+    transform-origin: center;
+    animation: spin 1.5s linear 2, opacity2 1.5s ease-in-out;
+    z-index: -1;
 }
 main {
-    animation: opacity 1 ease-in-out 1s;
+    animation: opacity 1 ease-in-out 1.5s;
     display: flex;
     flex-direction: column;
     background-color: $color_quaternary;
@@ -27,15 +29,7 @@ form {
     background-color: rgba(grey, 0.3);
     text-align: center;
     box-shadow: inset 0 15px 10px -15px grey;
-    padding: 20px;
-    @include minMedium {
-        width: fit-content;
-        border-radius: 30px;
-        align-self: flex-end;
-        position: absolute;
-        top: 10px;
-        right: 20px;
-    }
+    padding: 10px;
     @include minLarge {
         width: fit-content;
         border-radius: 30px;
@@ -65,7 +59,7 @@ h3 {
 }
 h4 {
     font-size: clamp(16px, 4vw, 18px);
-    width: 85%;
+    width: 90%;
 }
 p {
     font-size: clamp(14px, 4vw, 18px);
@@ -110,7 +104,7 @@ main ul {
     
     :nth-child(3) {
         background-color: lighten($color-secondary, 35%);
-        i {
+        .icon {
             color: $color-secondary;
         }
     }
@@ -118,7 +112,7 @@ main ul {
         flex-direction: row;
         justify-content: center;
     }
-    i {
+    .icon {
         padding: 0 20px;
         font-size: 1em;
         color: $color-senary;
@@ -191,6 +185,7 @@ figure {
     margin: 0;
     border-radius: 15px;
     position: relative;
+    box-shadow: 11px 10px 20px -4px rgba(0,0,0,0.4);
     &:nth-child(-1n + 3):before {
         content: "Nouveau";
         top: 5%;
@@ -215,6 +210,7 @@ img {
 }
 figcaption {
     padding: 10px;
+    position: relative;
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
@@ -225,11 +221,8 @@ figcaption {
 
     .heart {
         font-style: normal;
-        // top: -70%;
-        // left: 90%;
-        top: 10%;
-        right: 5%;
-        position: relative;
+        right: 40px;
+        position: absolute;
         width: fit-content;
     }
     i {
@@ -251,9 +244,12 @@ figcaption {
 
     .heart:hover .off {
         animation: scale 0.5s forwards, colored 0.5s linear;
-    }
+        
+        
+    }.heart:hover .on {
+        animation: coloredStroke 1s forwards;}
 }
 
 footer {
-    animation: opacity 1 ease-in-out 1s;
+    animation: opacity 1 ease-in-out 1.5s;
 }
