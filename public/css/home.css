@@ -69,14 +69,6 @@ select {
     transform: translateY(0);
   }
 }
-@keyframes change-color {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
 @keyframes progress {
   0% {
     opacity: 0;
@@ -380,7 +372,7 @@ figure {
 }
 
 .card {
-  background-color: #ffffff;
+  background-color: white;
   width: 100%;
   justify-content: center;
   overflow: hidden;

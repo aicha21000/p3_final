@@ -7,14 +7,7 @@
     }
 }
 
-@keyframes change-color {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
-}
+
 @keyframes progress {
     0% {
         opacity: 0;
@@ -31,12 +24,6 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-
-//   @keyframes leftRight {
-//     0% { background-color: red;}
-//     100% { background-color: green;}
-    
-//  }
 
 
 @keyframes opacity {
@@ -67,7 +54,7 @@
         fill: transparent;
     }
     100% {
-        fill: $color_secondary;
+        fill: $color-purple;
         stroke-width: 5px;
     }
 }

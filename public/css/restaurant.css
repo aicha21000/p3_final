@@ -69,14 +69,6 @@ select {
     transform: translateY(0);
   }
 }
-@keyframes change-color {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
 @keyframes progress {
   0% {
     opacity: 0;
@@ -275,9 +267,8 @@ main ul {
   flex-direction: column;
   gap: 10px;
 }
-
-li p {
-  font-size: 14px;
+main ul li p {
+  font-size: 13px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -422,7 +413,7 @@ button {
   cursor: pointer;
 }
 
-i {
+.fa-heart {
   font-size: 30px;
   position: absolute;
 }
