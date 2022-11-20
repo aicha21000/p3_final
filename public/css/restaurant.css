@@ -199,9 +199,15 @@ h1 {
 }
 
 h2 {
+  font-family: Shrikhand;
+  font-size: 22px;
+  width: 80%;
+}
+
+h3 {
   font-size: 20px;
 }
-h2::after {
+h3::after {
   content: "";
   display: block;
   width: 60px;
@@ -209,7 +215,7 @@ h2::after {
   background-color: #99e2d0;
 }
 
-h3 {
+h4 {
   font-size: 14px;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -331,7 +337,7 @@ main li:hover .over::after {
 }
 
 span {
-  font-size: 18px;
+  font-size: 14px;
   padding: 30px 10px;
 }
 
